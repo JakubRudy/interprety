@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    display: flexbox;
+}
+
+main {
+    background-color: red;
+    justify-self: center;
+    align-self: center;
+    width: 0.8 vw;
+    height: .2 vh;
+}
+
+#drzwi {
+    height: .15 vh;
+    width: 0.2 vw;
+    background-color: black;
+}
+
+#okno {
+    height: .1 vh;
+    width: 0.5 vw;
+    background-color: blue;
+}
