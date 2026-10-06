@@ -1,24 +1,43 @@
 body {
-    margin: 0;
-    display: flexbox;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 main {
-    background-color: red;
-    justify-self: center;
-    align-self: center;
-    width: 0.8 vw;
-    height: .2 vh;
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background: linear-gradient(#fffa00 0 15%, #ff0000 15% 85%, #fffa00 85% 100%);
+    width: 80vw;
+    height: 15vh; 
 }
 
 #drzwi {
-    height: .15 vh;
-    width: 0.2 vw;
-    background-color: black;
+    min-height: 15vh;
+    width: 20vw;
+    /* background: linear-gradient(#f69d3c, #3f87a6); */
 }
 
 #okno {
-    height: .1 vh;
-    width: 0.5 vw;
-    background-color: blue;
+    min-height: 1vh;
+    min-width: 5vw;
+    /* background: linear-gradient(#f69d3c, #3f87a6); */
+}
+
+.tyl {
+  width: 10vw;
+  height: 15vh;
+  background: linear-gradient(#fffa00 0 15%, #ff0000 15% 85%, #fffa00 85% 100%);
+  clip-path: polygon(0 0, 100% 80%, 0 100%);
+}
+
+.przod {
+  width: 10vw;
+  height: 15vh;
+  background: linear-gradient(#fffa00 0 15%, #ff0000 15% 85%, #fffa00 85% 100%);
+  /* Trójkąt skierowany w lewo: prawa góra -> lewy środek -> prawy dół */
+  clip-path: polygon(100% 0, 0 80%, 100% 100%);
 }
