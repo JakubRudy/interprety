@@ -66,6 +66,9 @@ main {
 }
 
 #kolo
+/*
+    Rysowanie kółek - ale coś nie pasuje tutaj, więc coś do poprawy
+*/
 { 
     position: absolute;
     top: 100%;
