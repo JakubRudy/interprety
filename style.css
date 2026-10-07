@@ -2,6 +2,7 @@ body {
     display:flex;
     align-items:center;
     justify-content:center;
+    position: relative;
 }
 
 main {
@@ -16,15 +17,130 @@ main {
 }
 
 #drzwi {
-    min-height: 15vh;
-    width: 20vw;
+    height: 70%;
+    width: 3vw;
+    background: gray;
+    border-left: 0.5vw solid gray;
+    border-right: 0.5vw solid gray;
+
+    box-shadow: 
+     23vw 0 0 0 gray,
+     46vw 0 0 0 gray,
+     72vw 0 0 0 gray;
+    /* min-height: 15vh; */
+    /* width: 20vw; */
     /* background: linear-gradient(#f69d3c, #3f87a6); */
 }
 
 #okno {
-    min-height: 1vh;
-    min-width: 5vw;
+    height: 35%;
+    width: 3vw;
+    background: lightblue;
+    align-self: flex-start;
+    margin-top: 2.5vh;
+
+    box-shadow: 
+    /*rysowanie okien */
+     -7.5vw 0 0 0 lightblue,
+     -11vw 0 0 0 lightblue,
+     -14.5vw 0 0 0 lightblue,
+     -17vw 0 0 0 lightblue,
+     -19vw 0 0 0 lightblue,
+     -22.5vw 0 0 0 lightblue,
+     -26vw 0 0 0 lightblue,
+     -33.5vw 0 0 0 lightblue,
+     -37vw 0 0 0 lightblue,
+     -42vw 0 0 0 lightblue,
+     -40.5vw 0 0 0 lightblue,
+     -45.5vw 0 0 0 lightblue,
+     -49vw 0 0 0 lightblue,
+     -56.5vw 0 0 0 lightblue,
+     -60vw 0 0 0 lightblue,
+     -63.5vw 0 0 0 lightblue,
+     -65vw 0 0 0 lightblue,
+     -68.5vw 0 0 0 lightblue,
+     -72vw 0 0 0 lightblue;
+   /* min-height: 1vh;
+    min-width: 5vw; */
     /* background: linear-gradient(#f69d3c, #3f87a6); */
+}
+
+#kolo
+{ 
+    position: absolute;
+    top: 100%;
+    left: 9vw;
+    width: 2.5vw;
+    height: 2.5vw;
+    border-radius: 50%;
+    background: darkgrey;
+    border: 5px solid black;
+    box-sizing: border-box;
+
+    box-shadow:
+    2.5vw 0 0 -5px darkgrey,
+    2.5vw 0 0 0 black,
+    5vw 0 0 -5px darkgrey,
+    5vw 0 0 0 black,
+    7.5vw 0 0 -5px darkgrey,
+    7.5vw 0 0 0 black,
+    10vw 0 0 -5px darkgrey,
+    10vw 0 0 0 black,
+    12.5vw 0 0 -5px darkgrey,
+    12.5vw 0 0 0 black,
+    15vw 0 0 -5px darkgrey,
+    15vw 0 0 0 black,
+    17.5vw 0 0 -5px darkgrey,
+    17.5vw 0 0 0 black,
+    20vw 0 0 -5px darkgrey,
+    20vw 0 0 0 black,
+    22.5vw 0 0 -5px darkgrey,
+    22.5vw 0 0 0 black,
+    25vw 0 0 -5px darkgrey,
+    25vw 0 0 0 black,
+    27.5vw 0 0 -5px darkgrey,
+    27.5vw 0 0 0 black,
+    30vw 0 0 -5px darkgrey,
+    30vw 0 0 0 black,
+    32.5vw 0 0 -5px darkgrey,
+    32.5vw 0 0 0 black,
+    35vw 0 0 -5px darkgrey,
+    35vw 0 0 0 black,
+    37.5vw 0 0 -5px darkgrey,
+    37.5vw 0 0 0 black,
+    40vw 0 0 -5px darkgrey,
+    40vw 0 0 0 black,
+    42.5vw 0 0 -5px darkgrey,
+    42.5vw 0 0 0 black,
+    45vw 0 0 -5px darkgrey,
+    45vw 0 0 0 black,
+    47.5vw 0 0 -5px darkgrey,
+    47.5vw 0 0 0 black,
+    50vw 0 0 -5px darkgrey,
+    50vw 0 0 0 black,
+    52.5vw 0 0 -5px darkgrey,
+    52.5vw 0 0 0 black,
+    55vw 0 0 -5px darkgrey,
+    55vw 0 0 0 black,
+    57.5vw 0 0 -5px darkgrey,
+    57.5vw 0 0 0 black,
+    60vw 0 0 -5px darkgrey,
+    60vw 0 0 0 black,
+    62.5vw 0 0 -5px darkgrey,
+    62.5vw 0 0 0 black,
+    65vw 0 0 -5px darkgrey,
+    65vw 0 0 0 black,
+    67.5vw 0 0 -5px darkgrey,
+    67.5vw 0 0 0 black,
+    70vw 0 0 -5px darkgrey,
+    70vw 0 0 0 black,
+    72.5vw 0 0 -5px darkgrey,
+    72.5vw 0 0 0 black,
+    75vw 0 0 -5px darkgrey,
+    75vw 0 0 0 black,
+    77.5vw 0 0 -5px darkgrey,
+    77.5vw 0 0 0 black;
+
 }
 
 .tyl {
