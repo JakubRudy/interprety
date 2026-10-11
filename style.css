@@ -185,6 +185,18 @@ main {
         82% 0, 85% 0;      
 }
 
+#tramwaj::before {
+    content: '';
+    position: absolute;
+    top: 5.5vh;
+    left: 9vw;                      /* symetrycznie po lewej stronie */
+    width: 0.5vw;
+    height: 3vh;
+    border-top: 3px solid black;
+    border-right: 7px solid black;
+    transform: scaleX(-1);          /* odbicie w drugą stronę */
+    z-index: 19;}
+
 #tramwaj::after {
     content: '';
     position: absolute;
