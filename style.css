@@ -184,3 +184,20 @@ main {
         65% 0, 68% 0,      
         82% 0, 85% 0;      
 }
+
+#tramwaj::after {
+    content: '';
+    position: absolute;
+    top: 5.5vh;
+    right: 9vw;
+    width: 0.5vw;
+    height: 3vh;
+    border-top: 3px solid black;
+    border-right: 7px solid black; /* czarne lusterko */
+    z-index: 19;
+
+    /*swiatlo*/
+    box-shadow: 
+        -82.5vw 3vh 0 -3px #fcfa80,   /* swiatlo tylne */
+        1.25vw 3vh 0 -3px #fcfa80;   /* swiatlo przednie */
+}
