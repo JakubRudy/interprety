@@ -8,6 +8,7 @@ body {
     display: flex; 
     justify-content: center; 
     align-items: center;
+    background: linear-gradient(rgb(0, 195, 255) 0% 50%, rgb(0, 255, 0) 50% 100%);
 }
 
 #tramwaj {
@@ -115,16 +116,20 @@ main {
 }
 
 #telebim {
+    font-family: 'Courier New', monospace;
     background-color: black;
     grid-column: 4 / span 1;
     grid-row: 1 / 2;
 
     color: yellow;
-    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #logo{
-    background-image: url('logo-mpk-lodz.jpg');
+    background-image: url('logo-mpk-lodz.png');
     background-size: contain;
     background-repeat: no-repeat;
 
@@ -183,6 +188,17 @@ main {
         32% 0, 35% 0,      
         65% 0, 68% 0,      
         82% 0, 85% 0;      
+}
+
+#kolo::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5vh;         
+    left: -10vw;           
+    width: 110vw;         
+    height: 1.5vh;       
+    background-color: #444; 
+    border-top: 3px solid #777;
 }
 
 #tramwaj::before {
