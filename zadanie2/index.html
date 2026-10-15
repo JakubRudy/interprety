@@ -58,8 +58,33 @@
         .then(data => {
             recipes = data.recipes;
 
-            document.getElementById("apiData").textContent =
-                JSON.stringify(recipes, null, 2);
+            recipes.forEach(recipe => {
+                const row = document.createElement("tr");
+
+                const nameCell = document.createElement("td");
+                nameCell.textContent = recipe.name;
+                row.appendChild(nameCell);
+
+                const cuisineCell = document.createElement("td");
+                cuisineCell.textContent = recipe.cuisine;
+                row.appendChild(cuisineCell);
+
+                const difficultyCell = document.createElement("td");
+                difficultyCell.textContent = recipe.difficulty;
+                row.appendChild(difficultyCell);
+
+                const prepTimeCell = document.createElement("td");
+                prepTimeCell.textContent = recipe.preparationTime;
+                row.appendChild(prepTimeCell);
+
+                const ratingCell = document.createElement("td");
+                ratingCell.textContent = recipe.rating;
+                row.appendChild(ratingCell);
+
+                document.querySelector("tbody").appendChild(row);
+
+            });
+            document.getElementById("apiData").textContent = JSON.stringify(data, null, 2);
         });
 </script>
 
