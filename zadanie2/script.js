@@ -74,6 +74,21 @@ fetch("https://dummyjson.com/recipes")
 
           const nameCell = document.createElement("td");
           nameCell.textContent = recipe.name;
+          nameCell.style.cursor = "pointer";
+
+          nameCell.addEventListener("click", (e) => {
+            e.stopPropagation();
+            alert(
+              "Ingredients:\n" +
+                recipe.ingredients.join(", ") +
+                "\n\nInstructions:\n" +
+                recipe.instructions.join(" "),
+            );
+          });
+
+
+
+
           row.appendChild(nameCell);
 
           const cuisineCell = document.createElement("td");
