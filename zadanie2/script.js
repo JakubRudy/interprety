@@ -1,5 +1,6 @@
 let recipes = [];
 let cuisines = new Set();
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
 fetch("https://dummyjson.com/recipes")
   .then((response) => response.json())
@@ -32,7 +33,7 @@ fetch("https://dummyjson.com/recipes")
           recipe.name.toLowerCase().includes(nameFilter) &&
           (recipe.cuisine === cuisineFilter || cuisineFilter === "") &&
           (recipe.difficulty === difficultyFilter || difficultyFilter === "") &&
-          (recipe.preparationTime <= prepTimeFilter || isNaN(prepTimeFilter))
+          (recipe.prepTimeMinutes <= prepTimeFilter || isNaN(prepTimeFilter))
         );
       });
 
@@ -54,6 +55,20 @@ fetch("https://dummyjson.com/recipes")
         (recipe) => {
           const row = document.createElement("tr");
 
+          if (favorites.includes(recipe.id)) {
+            row.classList.add("table-warning");
+          }
+          row.addEventListener("click", () => {
+            if (favorites.includes(recipe.id)) {
+              favorites = favorites.filter((id) => id !== recipe.id);
+              row.classList.remove("table-warning");
+            } else {
+              favorites.push(recipe.id);
+              row.classList.add("table-warning");
+            }
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+          });
+
           const nameCell = document.createElement("td");
           nameCell.textContent = recipe.name;
           row.appendChild(nameCell);
@@ -69,7 +84,7 @@ fetch("https://dummyjson.com/recipes")
           row.appendChild(difficultyCell);
 
           const prepTimeCell = document.createElement("td");
-          prepTimeCell.textContent = recipe.preparationTime;
+          prepTimeCell.textContent = recipe.prepTimeMinutes;
           row.appendChild(prepTimeCell);
 
           const ratingCell = document.createElement("td");
