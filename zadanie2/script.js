@@ -28,6 +28,8 @@ fetch("https://dummyjson.com/recipes")
         document.getElementById("preparationTime").value,
       );
 
+      document.getElementById("timeValue").textContent = prepTimeFilter;
+
       const filteredRecipes = recipes.filter((recipe) => {
         return (
           recipe.name.toLowerCase().includes(nameFilter) &&
@@ -45,7 +47,8 @@ fetch("https://dummyjson.com/recipes")
       document.getElementById("name").value = "";
       document.getElementById("cuisine").value = "";
       document.getElementById("difficulty").value = "";
-      document.getElementById("preparationTime").value = "";
+      document.getElementById("preparationTime").value = 60;
+      document.getElementById("timeValue").textContent = 60;
       drawTable(recipes);
     }
 

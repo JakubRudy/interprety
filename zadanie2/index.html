@@ -41,13 +41,16 @@
 
         <div class="col-sm">
           <label for="preparationTime" class="form-label"
-            >Preparation time (in minutes)</label
+            >Preparation time: <span id="timeValue">60</span> minutes</label
           >
           <input
-            type="number"
+            type="range"
             class="form-control"
             id="preparationTime"
             name="preparationTime"
+            min="0"
+            max="120"
+            value="60"
           />
         </div>
 
