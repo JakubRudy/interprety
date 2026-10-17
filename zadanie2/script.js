@@ -2,6 +2,15 @@ let recipes = [];
 let cuisines = new Set();
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
+fetch("https://dummyjson.com/recipes/tags")
+  .then((res) => res.json())
+  .then((tags) => {
+    const tagSelect = document.getElementById("tag");
+    tags.forEach((tag) => {
+      tagSelect.appendChild(new Option(tag, tag));
+    });
+  });
+
 fetch("https://dummyjson.com/recipes")
   .then((response) => response.json())
   .then((data) => {
@@ -19,6 +28,21 @@ fetch("https://dummyjson.com/recipes")
     addEventListener("change", filterRecipes);
 
     addEventListener("reset", resetFilters);
+
+    document.getElementById("tag").addEventListener("change", (e) => {
+      const selectedTag = e.target.value;
+      const url = selectedTag
+        ? `https://dummyjson.com/recipes/tag/${selectedTag}`
+        : "https://dummyjson.com/recipes";
+
+      fetch(url)
+        .then((res) => res.json())
+        .then((newData) => {
+          recipes = newData.recipes;
+          filterRecipes();
+        });
+    });
+
 
     function filterRecipes() {
       const nameFilter = document.getElementById("name").value.toLowerCase();
@@ -49,7 +73,14 @@ fetch("https://dummyjson.com/recipes")
       document.getElementById("difficulty").value = "";
       document.getElementById("preparationTime").value = 60;
       document.getElementById("timeValue").textContent = 60;
-      drawTable(recipes);
+      document.getElementById("tag").value = "";
+
+      fetch("https://dummyjson.com/recipes")
+        .then((res) => res.json())
+        .then((newData) => {
+          recipes = newData.recipes;
+          drawTable(recipes);
+        });
     }
 
     function drawTable(recipes) {
